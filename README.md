@@ -1,4 +1,3 @@
-![Uploading image.png…]()
 <p align="center">
   <img src="./fmds_banner.png" alt="FMDS - Face Mask Detection System Banner" width="100%">
 </p>
