@@ -159,11 +159,9 @@ This project is developed, owned, and maintained by:
 ### **MAYANK SHARMA**
 
 *   **GitHub:** [Mayank-iitj](https://github.com/Mayank-iitj)
-*   **Contact:** [chandrikadeb7@gmail.com](mailto:chandrikadeb7@gmail.com) (Using the email provided in the original README for contact purposes)
-
 ## 📜 License
 
-This project is licensed under the **MIT License**. See the `LICENSE` file for details.
+
 
 ***
 
