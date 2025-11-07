@@ -30,9 +30,6 @@ st.set_page_config(
 PATH_IMAGES = Path("./images")
 PATH_CSS = Path("./css")
 PATH_FACE_DETECTOR = Path("./face_detector")
-PATH_IMAGES.mkdir(exist_ok=True, parents=True)
-PATH_CSS.mkdir(exist_ok=True, parents=True)
-
 def local_css(file_name):
     """Method for reading styles.css and applying necessary changes to HTML"""
     css_file = Path(file_name)
