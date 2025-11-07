@@ -4,7 +4,6 @@ import numpy as np
 import cv2
 import os
 from pathlib import Path
-
 try:
     from tensorflow.keras.applications.mobilenet_v2 import preprocess_input
     from tensorflow.keras.preprocessing.image import img_to_array
@@ -30,6 +29,7 @@ st.set_page_config(
 PATH_IMAGES = Path("./images")
 PATH_CSS = Path("./css")
 PATH_FACE_DETECTOR = Path("./face_detector")
+
 def local_css(file_name):
     """Method for reading styles.css and applying necessary changes to HTML"""
     css_file = Path(file_name)
@@ -37,7 +37,20 @@ def local_css(file_name):
         with open(css_file) as f:
             st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
     else:
-        st.warning(f"CSS file not found: {file_name}")
+        # Apply default styles if CSS file not found
+        default_css = """
+        .stButton>button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 24px;
+            border-radius: 4px;
+        }
+        .stButton>button:hover {
+            background-color: #45a049;
+        }
+        """
+        st.markdown(f'<style>{default_css}</style>', unsafe_allow_html=True)
 
 def load_detection_models():
     """Load face detector and mask detector models"""
@@ -164,7 +177,7 @@ def main():
                                     st.image(result_img, use_column_width=True)
                     else:
                         st.error("Models could not be loaded. Please check the model files.")
-            
+                
             except Exception as e:
                 st.error(f"Error processing file: {str(e)}")
     
